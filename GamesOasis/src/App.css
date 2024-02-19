@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url(./assets/Fonts/Queen.otf) format('opentype');
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
     margin: 0;
-    font-family: "Euclid Circular A", "Poppins";
+    font-family: MyFont, sans-serif;
+    letter-spacing: 2px;
   }
 
   body {

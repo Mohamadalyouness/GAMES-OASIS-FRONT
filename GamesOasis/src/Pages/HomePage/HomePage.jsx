@@ -2,10 +2,14 @@ import React, { useRef, useEffect } from "react";
 import HomeVideo from "../../assets/HomeVideo.mp4";
 import Herobannerbg from "../../assets/hero-banner-bg.png";
 import Herbanner from "../../assets/hero-banner.png";
+import NewsSlider from '../../Components/NewsSlider/NewsSlider.jsx'
+import { MdOutlineGames } from "react-icons/md";
 import { IoMdArrowUp } from "react-icons/io";
+import { GiEgyptianWalk } from "react-icons/gi";
+import { AiTwotoneTrophy } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-
+// import axios from 'axios';
 const HomePage = () => {
   const videoRef = useRef(null);
 
@@ -33,8 +37,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className="VideoHeading">
-      <h1 className="HeadingOne">check this video to the best </h1>
-      <h1 className="HeadingOne"> emotionally engaging journeys through the world of gaming experiences</h1>
+      <MdOutlineGames className="GamesIcon1" /><h1 className="HeadingOne">it's just a game! </h1><MdOutlineGames className="GamesIcon" />
+     
       </div>
       <div className="videoContainer">
         <video
@@ -46,6 +50,13 @@ const HomePage = () => {
           playsInline
           controls
         ></video>
+      </div>
+      <div className="News">
+       <div className="Newsheader"><GiEgyptianWalk className="NewsIcon" /><h1>News Feed</h1><GiEgyptianWalk className="NewsIcon1" /></div>
+        <NewsSlider/>
+      </div>
+      <div className="Tournament">
+        <div className="Tournmentheader"><AiTwotoneTrophy className="NewsIcon" /><h1>Tournments</h1><AiTwotoneTrophy className="NewsIcon1" /></div>
       </div>
       <a
         href="#top"
