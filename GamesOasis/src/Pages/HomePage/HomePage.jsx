@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import HomeVideo from "../../assets/HomeVideo.mp4";
 import Herobannerbg from "../../assets/hero-banner-bg.png";
 import Herbanner from "../../assets/hero-banner.png";
@@ -8,13 +8,14 @@ import { MdOutlineGames } from "react-icons/md";
 import { IoMdArrowUp } from "react-icons/io";
 import { GiEgyptianWalk } from "react-icons/gi";
 import { AiTwotoneTrophy } from "react-icons/ai";
-import { SiYoutubegaming } from "react-icons/si";
 import { FaTwitch } from "react-icons/fa6";
 import { BsFire } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { SiYoutubeshorts } from "react-icons/si";
 import "./HomePage.css";
 // import axios from 'axios';
 const HomePage = () => {
+  const [animate, setAnimate] = useState(false);
   const videoRef = useRef(null);
 
   const scrollToTop = () => {
@@ -26,6 +27,7 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
+  
       <div className="WelcomeGamers">
         <h3 className="Headingthree">WELCOME TO GAMERS WORLD</h3>
         <h3 className="Headingthree">PLAY MORE LIVE MORE</h3>
@@ -102,7 +104,7 @@ const HomePage = () => {
                 rel="noopener noreferrer"
               >
                 <p className="Youtube">
-                  <SiYoutubegaming />
+                  <SiYoutubeshorts  />
                 </p>
               </a>
             </div>
@@ -130,7 +132,8 @@ const HomePage = () => {
       >
         <IoMdArrowUp aria-hidden="true" />
       </a>
-    </div>
+      </div>
+    
   );
 };
 

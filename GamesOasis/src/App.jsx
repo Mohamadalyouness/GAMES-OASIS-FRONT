@@ -5,6 +5,7 @@ import Navbar from "./Components/NavbarComponent/Navbar.jsx";
 import Footer from "./Components/FooterComponent/Footer.jsx";
 import LoginPage from "./Pages/LoginPage/LoginPage.jsx";
 import Loader from "./Components/Loader/Loader.jsx";
+import AboutUsPage from './Pages/AboutUsPage/AboutUsPage.jsx'
 
 import "./App.css";
 
@@ -38,6 +39,7 @@ const AppContent = () => {
         <>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/AboutUsPage" element={<AboutUsPage />} />
             <Route path="/login" element={<LoginPage />} />
           </Routes>
           <Footer />

@@ -68,6 +68,14 @@
     opacity: 1;
   }
 }
+.section-class {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.animate {
+  opacity: 1;
+}
 
 .Headingthree {
   color: var(--text-white);
@@ -394,7 +402,7 @@
 }
 
 .Youtube {
-  color: red;
+  color: rgba(255, 0, 0, 0.712);
   font-size: 2rem;
 }
 .PopularGames {

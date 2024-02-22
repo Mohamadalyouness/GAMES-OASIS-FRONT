@@ -1,9 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./LoginPage.css";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaUnlockKeyhole } from "react-icons/fa6";
 import { CiUser } from "react-icons/ci";
+import { MdOutlineGames } from "react-icons/md";
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [gamingName, setGamingName] = useState("");
+  const [username, setusername] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post("http://localhost:4005/api/login", {
+        username,
+        password,
+      });
+      console.log("Login successful!", response.data);
+      navigate("/");
+      toast.success("Welcome, " + username + "!");
+    } catch (error) {
+      console.error("Error occurred during login:", error);
+      toast.error("UserName or password is incorrect please try again!");
+    }
+  };
+
+  const handleRegister = async () => {
+    try {
+      const response = await axios.post("http://localhost:4005/api/register", {
+        username,
+        gamingName,
+        email,
+        password,
+      });
+      console.log("Registration successful!", response.data);
+      toast.success("Registration successful!");
+    } catch (error) {
+      console.error("Error occurred during registration:", error);
+      toast.error("Registration failed!");
+    }
+  };
+
+  const toggleForm = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
     <div className="section">
       <div className="container">
@@ -27,31 +74,33 @@ const LoginPage = () => {
                     <div className="center-wrap">
                       <div className="section text-center">
                         <h4 className="mb-4 pb-3">Log In</h4>
+                        <i className="input-icon uil uil-at"></i>
+                        <MdOutlineAlternateEmail className="input-icon" />
                         <div className="form-group">
                           <input
-                            type="email"
+                            type="text"
                             name="logemail"
                             className="form-style"
-                            placeholder="Your Email"
-                            id="logemail"
+                            placeholder="Full Name"
+                            value={username}
+                            onChange={(e) => setusername(e.target.value)}
                             autoComplete="off"
                           />
-                          <i className="input-icon uil uil-at"></i>
-                          <MdOutlineAlternateEmail className="input-icon" />
                         </div>
+                        <i className="input-icon uil uil-lock-alt"></i>
+                        <FaUnlockKeyhole className="input-icon" />
                         <div className="form-group mt-2">
                           <input
                             type="password"
                             name="logpass"
                             className="form-style"
-                            placeholder="Your Password"
-                            id="logpass"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             autoComplete="off"
                           />
-                          <i className="input-icon uil uil-lock-alt"></i>
-                          <FaUnlockKeyhole  className="input-icon" />
                         </div>
-                        <a href="#" className="btn mt-4">
+                        <a href="#" onClick={handleLogin} className="btn mt-4">
                           submit
                         </a>
                         <p className="mb-0 mt-4 text-center">
@@ -66,43 +115,67 @@ const LoginPage = () => {
                     <div className="center-wrap">
                       <div className="section text-center">
                         <h4 className="mb-4 pb-3">Sign Up</h4>
+                        <i className="input-icon uil uil-user"></i>
+                        <CiUser className="input-icon" />
                         <div className="form-group">
                           <input
                             type="text"
                             name="logname"
                             className="form-style"
-                            placeholder="Your Full Name"
+                            placeholder="Full Name"
+                            value={username}
+                            onChange={(e) => setusername(e.target.value)}
                             id="logname"
                             autoComplete="off"
                           />
-                          <i className="input-icon uil uil-user"></i>
-                          <CiUser  className="input-icon" />
                         </div>
+                        <i className="input-icon uil uil-at"></i>
+                        <MdOutlineGames className="input-icon" />
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            name="gamingName"
+                            className="form-style"
+                            placeholder="Gaming Name"
+                            value={gamingName}
+                            onChange={(e) => setGamingName(e.target.value)}
+                            id="gamingName"
+                            autoComplete="off"
+                          />
+                        </div>
+                        <i className="input-icon uil uil-at"></i>
+                        <MdOutlineAlternateEmail className="input-icon" />
                         <div className="form-group mt-2">
                           <input
                             type="email"
                             name="logemail"
                             className="form-style"
-                            placeholder="Your Email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             id="logemail"
                             autoComplete="off"
                           />
-                          <i className="input-icon uil uil-at"></i>
-                          <MdOutlineAlternateEmail className="input-icon" />
                         </div>
+                        <i className="input-icon uil uil-lock-alt"></i>
+                        <FaUnlockKeyhole className="input-icon" />
                         <div className="form-group mt-2">
                           <input
                             type="password"
                             name="logpass"
                             className="form-style"
-                            placeholder="Your Password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             id="logpass"
                             autoComplete="off"
                           />
-                          <i className="input-icon uil uil-lock-alt"></i>
-                          <FaUnlockKeyhole className="input-icon" />
                         </div>
-                        <a href="#" className="btn mt-4">
+                        <a
+                          href="#"
+                          onClick={handleRegister}
+                          className="btn mt-4"
+                        >
                           submit
                         </a>
                       </div>
@@ -114,6 +187,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <ToastContainer className="foo"/>
     </div>
   );
 };
