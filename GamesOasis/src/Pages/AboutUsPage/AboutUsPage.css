@@ -1,18 +1,18 @@
 .AboutUsPage {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .AboutUsheading {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   animation: slideIn 1s ease-in-out;
-  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -20,50 +20,67 @@
 .AboutUsheadingText {
   border-bottom: 1px solid #dedede;
   border-top: 1px solid #dedede;
+  color: #dedede;
 }
 .whoAreWe {
-	display: flex;
-	width: 85%;
-	background-color: rgba(128, 112, 172, 0.384);
-	margin-top: 2rem;
-	border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+  display: flex;
+  width: 85%;
+  background-color: rgba(128, 112, 172, 0.384);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
 }
 .WhoAreWeImage {
-	width: 50%;
-	border-radius: 33px;
+  width: 50%;
+  border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
 }
 
 .Content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
-.WAWHeading{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	animation: slideIn 1s ease-in-out;
-	background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-	color: transparent;
-	background-clip: text;
-	-webkit-background-clip: text;	
+.WAWHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .WAWContent {
-	padding-right: 2rem;
-	padding-left: 2rem;
-	display: flex;
-	color: #0c0c36;
-	align-items: center;
-	justify-content: center;
-	margin-top: 1rem;
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	animation: slideIn 1s ease-in-out;
-	background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-	background-clip: text;
-	-webkit-background-clip: text;	
+  padding-right: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  color: #DEDEDE;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
+.AboutUsiconRight {
+  font-size: 2.5rem;
+  color: #dedede;
+  margin-right: 1.5rem;
+  animation: slideIn 1s ease-in-out;
+}
+
+.AboutUsiconLeft {
+  font-size: 2.5rem;
+  color: #dedede;
+  margin-left: 1.5rem;
+  animation: slideIn 1s ease-in-out;
+}
+

@@ -214,33 +214,6 @@
   --s: #0005;
   transition: none;
 }
-
-@media (width >= 320px) {
-  .burger {
-    display: none;
-  }
-}
-
-.dropdown {
-  position: relative;
-  cursor: pointer;
-}
-
-.dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  height: 72px;
-}
-.dropdown > a > img {
-  width: 20px;
-}
-
-.dropdown:hover .menu {
-  opacity: 1;
-  visibility: visible;
-}
-
 .menu {
   position: absolute;
   top: 60px;

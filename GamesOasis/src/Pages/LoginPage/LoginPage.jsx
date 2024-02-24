@@ -75,7 +75,7 @@ const LoginPage = () => {
                       <div className="section text-center">
                         <h4 className="mb-4 pb-3">Log In</h4>
                         <i className="input-icon uil uil-at"></i>
-                        <MdOutlineAlternateEmail className="input-icon" />
+                        <CiUser className="input-icon" />
                         <div className="form-group">
                           <input
                             type="text"

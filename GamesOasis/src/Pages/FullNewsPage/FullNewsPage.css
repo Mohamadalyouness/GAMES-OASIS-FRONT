@@ -1,0 +1,36 @@
+.FullNewsPage {
+    width: 100%;
+    display: flex;
+}
+.NewsName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: #DEDEDE;
+    
+}
+.imgNewsGame {
+    width: 50%; 
+    border-bottom-left-radius: 33px;
+    border-top-left-radius: 33px;
+}
+
+.Middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+    margin-left: 2rem;
+    gap: 3rem;
+    background-color: #DEDEDE;
+    border-radius: 33px;
+}
+
+.FullContent {
+   padding: 1rem;
+   letter-spacing: 3px;
+   margin-right: 1rem;
+}

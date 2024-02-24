@@ -223,6 +223,8 @@
 }
 .Herobanner {
   position: absolute;
+  width: 60%;
+  height: 70%;
   z-index: 1;
   margin-bottom: 2rem;
   animation: slideIn 1s ease-in-out;
@@ -401,9 +403,9 @@
   font-size: 2rem;
 }
 
-.Youtube {
-  color: rgba(255, 0, 0, 0.712);
-  font-size: 2rem;
+.Link {
+  font-size: 1.5rem;
+  color: #DEDEDE
 }
 .PopularGames {
   display: flex;

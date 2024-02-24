@@ -1,35 +1,44 @@
-import React from 'react';
-import './PopularGames.css'
-const PopulerGamesSLider = () => {
+import React, { useState, useEffect } from "react";
+import "./PopularGames.css";
+
+const PopularGamesSlider = () => {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    const fetchPopularGames = async () => {
+      try {
+        const response = await fetch(
+          "https://api.rawg.io/api/games?key=e45e7dfaf729470f861e9a41cfc0245e"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        if (Array.isArray(data.results)) {
+          setGames(data.results);
+        } else {
+          console.error("Invalid data structure:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchPopularGames();
+  }, []);
+
   return (
-    <div className="PouplerGamesSlider">
-      <div
-        className="box box-1"
-        style={{ '--img': 'url(https://i.postimg.cc/sgBkfbtx/img-1.jpg)' }}
-        data-text="Renji"
-      ></div>
-      <div
-        className="box box-2"
-        style={{ '--img': 'url(https://i.postimg.cc/3RZ6bhDS/img-2.jpg)' }}
-        data-text="Sora"
-      ></div>
-      <div
-        className="box box-3"
-        style={{ '--img': 'url(https://i.postimg.cc/DZhHg0m4/img-3.jpg)' }}
-        data-text="Kaito"
-      ></div>
-      <div
-        className="box box-4"
-        style={{ '--img': 'url(https://i.postimg.cc/KjqWx5ft/img-4.jpg)' }}
-        data-text="Tsuki"
-      ></div>
-      <div
-        className="box box-5"
-        style={{ '--img': 'url(https://i.postimg.cc/nrcWyW4H/img-5.jpg)' }}
-        data-text="Mitsui"
-      ></div>
+    <div className="PopularGamesSlider">
+      {games.map((game, index) => (
+        <div
+          key={index}
+          className={`box box-${index + 1}`}
+          style={{ "--img": `url(${game.background_image})` }}
+          data-text={game.name}
+        ></div>
+      ))}
     </div>
   );
 };
 
-export default PopulerGamesSLider;
+export default PopularGamesSlider;
