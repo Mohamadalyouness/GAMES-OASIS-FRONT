@@ -64,7 +64,7 @@
   .arrow {
     font-size: 1.2rem;
   }
-  
+
   /* Links inside the dropdown */
   .dropdown-content a {
     color: #DEDEDE;
@@ -93,6 +93,7 @@
     height: 200px;
     background-color: #f2f2f2;
     border-radius: 10px;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,6 +141,7 @@
     padding: 0.4rem;
     border-radius: 10px;
     font-weight: 700;
+    margin-right: 6rem;
   }
 
   .GamesHeader {

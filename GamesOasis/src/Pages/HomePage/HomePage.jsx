@@ -14,9 +14,23 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import "./HomePage.css";
 import axios from "axios";
 const HomePage = () => {
-  const [animate, setAnimate] = useState(false);
   const videoRef = useRef(null);
   const [tournaments, setTournaments] = useState([]);
+  const [communities, setCommunities] = useState([]);
+  useEffect(() => {
+    const fetchCommunities = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:4005/api/community/"
+        );
+        setCommunities(response.data);
+      } catch (error) {
+        console.error("Error fetching communities:", error);
+      }
+    };
+
+    fetchCommunities();
+  }, []);
 
   useEffect(() => {
     const fetchTournaments = async () => {
@@ -78,7 +92,7 @@ const HomePage = () => {
           <h1 className="TournmentsheaderText">News Feed</h1>
           <GiEgyptianWalk className="NewsIcon1" />
         </div>
-        <NewsSlider />
+        {/* <NewsSlider /> */}
       </div>
       <div className="Tournament">
         <div className="Tournmentheader">
@@ -135,6 +149,22 @@ const HomePage = () => {
           ))}
         </div>
       </div>
+      <div className="Community">
+        <h1 className="CommunityHeading">Join Community Now</h1>
+        <div className="cards">
+        {communities.map((community) => (
+          <div key={community._id} className="cardHome">
+            <img
+              className="cardimg"
+              src={`http://localhost:4005/${community.images}`}
+            />
+            <p className="heading">{community.name}</p>
+            <div className="overlay"></div>
+            <button className="card-btn">Join Now</button>
+          </div>
+        ))}
+        </div>
+      </div>
       <div className="PopularGames">
         <div className="PopularGamesheader">
           <BsFire className="PopularIcons" />
@@ -143,6 +173,7 @@ const HomePage = () => {
         </div>
         <PouplerGamesSlider1 />
       </div>
+
       <a
         href="#top"
         className="back-top-btn"

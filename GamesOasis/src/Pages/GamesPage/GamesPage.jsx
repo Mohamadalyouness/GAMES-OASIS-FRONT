@@ -3,6 +3,7 @@ import { FiChevronDown } from "react-icons/fi"; // Import the ChevronDown icon f
 import axios from "axios";
 import "./GamesPage.css";
 import { MdOutlineGames } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const GamesPage = () => {
   const [platforms, setPlatforms] = useState([]);
@@ -161,7 +162,10 @@ const GamesPage = () => {
             {platforms.map((platform, index) => (
               <a
                 key={index}
-                onClick={() => handlePlatformChange(platform.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handlePlatformChange(platform.id);
+                }}
                 href="#"
               >
                 {platform.name}
@@ -238,12 +242,14 @@ const GamesPage = () => {
       </div>
       <div className="Games">
         {games.map((game, index) => (
+        
           <div key={index} className="card">
             <img src={game.background_image} alt="" />
             <div className="card__content">
-              <p className="card__title">{game.name}</p>
+            <Link className="link" key={index} to={`/game/${game.id}`}><p className="card__title">{game.name}</p></Link>
             </div>
           </div>
+     
         ))}
       </div>
     </div>

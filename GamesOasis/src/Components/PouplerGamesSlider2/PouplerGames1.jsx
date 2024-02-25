@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./PouplerGames1.css";
+import { Link } from 'react-router-dom';
 
 const PopularGames1 = () => {
   const [games, setGames] = useState([]);
@@ -19,18 +20,18 @@ const PopularGames1 = () => {
   return (
     <section className="carousel">
       <ol className="carousel__viewport">
+      <div className="Games">
         {games.map((game, index) => (
-          <li key={index} className="carousel__slide">
-            <div
-              className="carousel__snapper"
-              style={{ backgroundImage: `url('${game.background_image}')` ,
-              backgroundSize: 'cover', // Set background-size to cover
-              backgroundPosition: 'center',}}
-            >
-              <h1 className="GameName">{game.name}</h1>
+        
+          <div key={index} className="card">
+            <img src={game.background_image} alt="" />
+            <div className="card__content">
+            <Link className="link" key={index} to={`/game/${game.id}`}><p className="card__title">{game.name}</p></Link>
             </div>
-          </li>
+          </div>
+     
         ))}
+      </div>
       </ol>
     </section>
   );

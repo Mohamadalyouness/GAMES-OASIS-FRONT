@@ -21,7 +21,9 @@ const AboutUsPage = () => {
   return (
     <main className="AboutUsPage">
       <div className="AboutUsheading">
-      <GiZeusSword className="AboutUsiconRight" /><h1 className="AboutUsheadingText">About Us</h1><GiZeusSword className="AboutUsiconLeft" />
+        <GiZeusSword className="AboutUsiconRight" />
+        <h1 className="AboutUsheadingText">About Us</h1>
+        <GiZeusSword className="AboutUsiconLeft" />
       </div>
       <div
         className="whoAreWe"
@@ -75,65 +77,3 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
-
-
-// import React, { useState } from 'react';
-// import './styles.css'; // Make sure to import your CSS file
-
-// const ContactForm = () => {
-//   const [message, setMessage] = useState('');
-//   const [name, setName] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [messageSent, setMessageSent] = useState(false);
-
-//   const handleSendMessage = () => {
-//     // Here you can perform any actions related to sending the message
-//     // For now, let's just simulate a message being sent by setting messageSent to true
-//     setMessageSent(true);
-//   };
-
-//   return (
-//     <div className={`wrapper centered ${messageSent ? 'sent' : ''}`}>
-//       <article className="letter">
-//         <div className="side">
-//           <h1>Contact us</h1>
-//           <p>
-//             <textarea
-//               placeholder="Your message"
-//               value={message}
-//               onChange={(e) => setMessage(e.target.value)}
-//             ></textarea>
-//           </p>
-//         </div>
-//         <div className="side">
-//           <p>
-//             <input
-//               type="text"
-//               placeholder="Your name"
-//               value={name}
-//               onChange={(e) => setName(e.target.value)}
-//             />
-//           </p>
-//           <p>
-//             <input
-//               type="email"
-//               placeholder="Your email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//             />
-//           </p>
-//           <p>
-//             <button onClick={handleSendMessage}>Send</button>
-//           </p>
-//         </div>
-//       </article>
-//       <div className="envelope front"></div>
-//       <div className="envelope back"></div>
-//       <p className="result-message centered">
-//         {messageSent && 'Thank you for your message'}
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default ContactForm;
