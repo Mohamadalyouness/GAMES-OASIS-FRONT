@@ -12,7 +12,12 @@
 }
 .GameH1 {
     font-size: 5rem;
-    color: #DEDEDE;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-in-out;
+    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 .Gameimg {
     width: 100%;
@@ -36,7 +41,12 @@
 }
 
 .RightSide h3 {
-    color: #5E5E5E;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-in-out;
+    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     font-size: 2rem;
 }
 
@@ -84,18 +94,33 @@
 
 .MiddleH1{
     font-size: 3rem;
-    color: #DEDEDE;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-in-out;
+    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .MiddleBottom h3 {
    padding-bottom: 1rem;
-   color: #5E5E5E;
+   text-transform: uppercase;
+   animation: slideIn 1s ease-in-out;
+   background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+   color: transparent;
+   background-clip: text;
+   -webkit-background-clip: text;
    font-size: 2rem;
 }
 
 
 .MiddleBottom span {
-    color: #DEDEDE;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-in-out;
+    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
  }
  .BottomSide {
     display: flex;
@@ -107,6 +132,11 @@
 
  .BottomH1 {
     font-size: 3rem;
-    color: #DEDEDE;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-in-out;
+    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
  } 
  

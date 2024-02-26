@@ -23,6 +23,10 @@
     margin: 0;
     padding: 0;
   }
+
+  .link {
+    text-decoration: none;
+  }
   
   .carousel {
     position: relative;

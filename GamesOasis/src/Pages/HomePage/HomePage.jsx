@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import HomeVideo from "../../assets/HomeVideo.mp4";
 import Herobannerbg from "../../assets/hero-banner-bg.png";
 import Herbanner from "../../assets/hero-banner1.png";
-import NewsSlider from "../../Components/NewsSlider/NewsSlider.jsx";
+import NewsSlider from "../../Components/NewNewsSlider/NewsSliderF.jsx";
 import PouplerGamesSlider1 from "../../Components/PouplerGamesSlider2/PouplerGames1.jsx";
 import { MdOutlineGames } from "react-icons/md";
 import { IoMdArrowUp } from "react-icons/io";
@@ -92,7 +92,7 @@ const HomePage = () => {
           <h1 className="TournmentsheaderText">News Feed</h1>
           <GiEgyptianWalk className="NewsIcon1" />
         </div>
-        {/* <NewsSlider /> */}
+        <NewsSlider />
       </div>
       <div className="Tournament">
         <div className="Tournmentheader">
@@ -107,62 +107,67 @@ const HomePage = () => {
           </h3>
         </div>
         <div className="Tournamentbody">
-          {tournaments.map((tournament) => (
-            <div key={tournament._id} className="TournamentDetails">
-              {tournament.teamLogos.map((logo, index) => (
-                <img
-                  key={index}
-                  className="TeamLogo"
-                  src={`http://localhost:4005/${logo}`}
-                  alt={`Team ${index + 1} Logo`}
-                />
-              ))}
-              <div className="TeamOneTournmentinfo">
-                <h1>{tournament.teamNames[0]}</h1>
-                <h3>{tournament.gameName}</h3>
-              </div>
-              <div className="TournmentDetails">
-                <h1>{tournament.time}</h1>
-                <h3>{new Date(tournament.date).toLocaleDateString()}</h3>
-                <div className="links">
-                  <a
-                    href={tournament.watchLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <p className="Link">
-                      <FaExternalLinkAlt />
-                    </p>
-                  </a>
-                </div>
-              </div>
-              <div className="TeamTwoTournmentinfo">
-                <h1>{tournament.teamNames[1]}</h1>
-                <h3>{tournament.gameName}</h3>
-              </div>
-              <img
-                className="TeamTwoLogo"
-                src={`http://localhost:4005/${tournament.teamLogos}`}
-                alt=""
-              />
-            </div>
-          ))}
+  {tournaments.map((tournament) => {
+    const teamOneLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[0]}`;
+    const teamTwoLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[1]}`;
+
+    return (
+      <div key={tournament._id} className="TournamentDetails">
+        {/* First Team */}
+        <div className="TournmentCard">
+          <div className="Cardimgdiv">
+          <img className="TeamLogo" src={teamOneLogoUrl} alt="Team One Logo" />
+          </div>
+          <div className="TournmentData">
+            <h1 className="Nameh1">{tournament.teamNames[0]}</h1>
+            <h1 className="Gameh1">{tournament.gameName}</h1>
+          </div>
         </div>
+        
+        {/* Tournament Details */}
+        <div className="TournmentDetails">
+          <h1>{tournament.time}</h1>
+          <h3>{new Date(tournament.date).toLocaleDateString()}</h3>
+          <div className="links">
+            <a
+              href={tournament.watchLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="Link">
+                <FaExternalLinkAlt />
+              </p>
+            </a>
+          </div>
+        </div>
+        {/* Second Team */}
+        <div className="TournmentCard">
+        <div className="Cardimgdiv">
+          <img className="TeamLogo" src={teamTwoLogoUrl} alt="Team Two Logo" />
+          </div>
+          <div className="TournmentData">
+            <h1 className="Nameh1">{tournament.teamNames[1]}</h1>
+            <h1>{tournament.gameName}</h1>
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
       </div>
       <div className="Community">
         <h1 className="CommunityHeading">Join Community Now</h1>
         <div className="cards">
-        {communities.map((community) => (
-          <div key={community._id} className="cardHome">
-            <img
-              className="cardimg"
-              src={`http://localhost:4005/${community.images}`}
-            />
-            <p className="heading">{community.name}</p>
-            <div className="overlay"></div>
-            <button className="card-btn">Join Now</button>
-          </div>
-        ))}
+          {communities.map((community) => (
+            <div key={community._id} className="cardHome">
+              <img
+                className="cardimg"
+                src={`http://localhost:4005/${community.images}`}
+              />
+              <div className="overlay"></div>
+              <button className="card-btn">Join Now</button>
+            </div>
+          ))}
         </div>
       </div>
       <div className="PopularGames">
