@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import axios from "axios";
 import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
@@ -9,12 +9,14 @@ import { FaUnlockKeyhole } from "react-icons/fa6";
 import { CiUser } from "react-icons/ci";
 import { MdOutlineGames } from "react-icons/md";
 const LoginPage = () => {
+ 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [gamingName, setGamingName] = useState("");
   const [username, setusername] = useState("");
   const [isLogin, setIsLogin] = useState(true);
+
 
   const handleLogin = async () => {
     try {
@@ -23,6 +25,14 @@ const LoginPage = () => {
         password,
       });
       console.log("Login successful!", response.data);
+      
+      // Save user data and token to local storage
+      localStorage.setItem("userData", JSON.stringify(response.data.user));
+      localStorage.setItem("token", response.data.token);
+  
+      // Refresh the page to trigger re-render of the Navbar component
+      window.location.reload();
+  
       navigate("/");
       toast.success("Welcome, " + username + "!");
     } catch (error) {
@@ -30,6 +40,7 @@ const LoginPage = () => {
       toast.error("UserName or password is incorrect please try again!");
     }
   };
+  
 
   const handleRegister = async () => {
     try {

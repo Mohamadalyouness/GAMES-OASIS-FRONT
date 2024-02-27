@@ -11,12 +11,16 @@ import { AiTwotoneTrophy } from "react-icons/ai";
 import { BsFire } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./HomePage.css";
 import axios from "axios";
 const HomePage = () => {
   const videoRef = useRef(null);
   const [tournaments, setTournaments] = useState([]);
   const [communities, setCommunities] = useState([]);
+
   useEffect(() => {
     const fetchCommunities = async () => {
       try {
@@ -32,6 +36,37 @@ const HomePage = () => {
     fetchCommunities();
   }, []);
 
+  const handleJoinCommunity = async (communityId) => {
+    try {
+      // Retrieve user data from local storage
+      const userDataString = localStorage.getItem("userData");
+  
+      // Parse user data to extract user ID
+      if (!userDataString) {
+        console.error("User data not found in local storage");
+        return;
+      }
+  
+      const userData = JSON.parse(userDataString);
+      const userId = userData._id;
+  
+      // Construct the data object with user ID
+      const data = {
+        userId: userId
+      };
+  
+      // Make a request to join the community
+      const response = await axios.post(`http://localhost:4005/api/community/${communityId}/join`, data);
+  
+      // Handle the success response
+      console.log(response.data.message);
+      toast.success("Joined successfully!");
+    } catch (error) {
+      console.error("Error joining community:", error);
+      toast.error("Sorry try again!");
+    }
+  };
+  
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
@@ -165,7 +200,7 @@ const HomePage = () => {
                 src={`http://localhost:4005/${community.images}`}
               />
               <div className="overlay"></div>
-              <button className="card-btn">Join Now</button>
+              <button className="card-btn" onClick={() => handleJoinCommunity(community._id)}>Join Now</button>
             </div>
           ))}
         </div>
