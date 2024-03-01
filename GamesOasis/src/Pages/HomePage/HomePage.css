@@ -579,3 +579,28 @@
   border-top: 1px solid #dedede;
 }
 
+
+@media screen and (max-width: 768px) {
+  .Headingthree {
+      font-size: 1rem;
+      margin-left:1.1rem;
+      padding-left: 2rem;
+  }
+  
+  .HeadingOne {
+    font-size: 1rem;
+    padding-left: 2rem;
+   
+  }
+  .Herobannerbg {
+     display: none;
+  }
+  .Herobanner {
+    width: 40%;
+    height: 40%;
+ 
+  }
+
+ }
+
+

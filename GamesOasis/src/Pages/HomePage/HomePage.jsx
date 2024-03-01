@@ -11,6 +11,7 @@ import { AiTwotoneTrophy } from "react-icons/ai";
 import { BsFire } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { MdOutlineEmojiPeople } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -40,33 +41,36 @@ const HomePage = () => {
     try {
       // Retrieve user data from local storage
       const userDataString = localStorage.getItem("userData");
-  
+
       // Parse user data to extract user ID
       if (!userDataString) {
         console.error("User data not found in local storage");
         return;
       }
-  
+
       const userData = JSON.parse(userDataString);
       const userId = userData._id;
-  
+
       // Construct the data object with user ID
       const data = {
-        userId: userId
+        userId: userId,
       };
-  
+
       // Make a request to join the community
-      const response = await axios.post(`http://localhost:4005/api/community/${communityId}/join`, data);
-  
+      const response = await axios.post(
+        `http://localhost:4005/api/community/${communityId}/join`,
+        data
+      );
+
       // Handle the success response
       console.log(response.data.message);
       toast.success("Joined successfully!");
     } catch (error) {
       console.error("Error joining community:", error);
-      toast.error("Sorry try again!");
+      toast.error("already a member in this community!");
     }
   };
-  
+
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
@@ -142,56 +146,68 @@ const HomePage = () => {
           </h3>
         </div>
         <div className="Tournamentbody">
-  {tournaments.map((tournament) => {
-    const teamOneLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[0]}`;
-    const teamTwoLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[1]}`;
+          {tournaments.map((tournament) => {
+            const teamOneLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[0]}`;
+            const teamTwoLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[1]}`;
 
-    return (
-      <div key={tournament._id} className="TournamentDetails">
-        {/* First Team */}
-        <div className="TournmentCard">
-          <div className="Cardimgdiv">
-          <img className="TeamLogo" src={teamOneLogoUrl} alt="Team One Logo" />
-          </div>
-          <div className="TournmentData">
-            <h1 className="Nameh1">{tournament.teamNames[0]}</h1>
-            <h1 className="Gameh1">{tournament.gameName}</h1>
-          </div>
+            return (
+              <div key={tournament._id} className="TournamentDetails">
+                {/* First Team */}
+                <div className="TournmentCard">
+                  <div className="Cardimgdiv">
+                    <img
+                      className="TeamLogo"
+                      src={teamOneLogoUrl}
+                      alt="Team One Logo"
+                    />
+                  </div>
+                  <div className="TournmentData">
+                    <h1 className="Nameh1">{tournament.teamNames[0]}</h1>
+                    <h1 className="Gameh1">{tournament.gameName}</h1>
+                  </div>
+                </div>
+
+                {/* Tournament Details */}
+                <div className="TournmentDetails">
+                  <h1>{tournament.time}</h1>
+                  <h3>{new Date(tournament.date).toLocaleDateString()}</h3>
+                  <div className="links">
+                    <a
+                      href={tournament.watchLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p className="Link">
+                        <FaExternalLinkAlt />
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                {/* Second Team */}
+                <div className="TournmentCard">
+                  <div className="Cardimgdiv">
+                    <img
+                      className="TeamLogo"
+                      src={teamTwoLogoUrl}
+                      alt="Team Two Logo"
+                    />
+                  </div>
+                  <div className="TournmentData">
+                    <h1 className="Nameh1">{tournament.teamNames[1]}</h1>
+                    <h1>{tournament.gameName}</h1>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        
-        {/* Tournament Details */}
-        <div className="TournmentDetails">
-          <h1>{tournament.time}</h1>
-          <h3>{new Date(tournament.date).toLocaleDateString()}</h3>
-          <div className="links">
-            <a
-              href={tournament.watchLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="Link">
-                <FaExternalLinkAlt />
-              </p>
-            </a>
-          </div>
-        </div>
-        {/* Second Team */}
-        <div className="TournmentCard">
-        <div className="Cardimgdiv">
-          <img className="TeamLogo" src={teamTwoLogoUrl} alt="Team Two Logo" />
-          </div>
-          <div className="TournmentData">
-            <h1 className="Nameh1">{tournament.teamNames[1]}</h1>
-            <h1>{tournament.gameName}</h1>
-          </div>
-        </div>
-      </div>
-    );
-  })}
-</div>
       </div>
       <div className="Community">
+      <div className="Newsheader">
+        <MdOutlineEmojiPeople className="NewsIcon" />
         <h1 className="CommunityHeading">Join Community Now</h1>
+        <MdOutlineEmojiPeople className="NewsIcon1" />
+        </div>
         <div className="cards">
           {communities.map((community) => (
             <div key={community._id} className="cardHome">
@@ -200,7 +216,12 @@ const HomePage = () => {
                 src={`http://localhost:4005/${community.images}`}
               />
               <div className="overlay"></div>
-              <button className="card-btn" onClick={() => handleJoinCommunity(community._id)}>Join Now</button>
+              <button
+                className="card-btn"
+                onClick={() => handleJoinCommunity(community._id)}
+              >
+                Join Now
+              </button>
             </div>
           ))}
         </div>
@@ -223,6 +244,7 @@ const HomePage = () => {
       >
         <IoMdArrowUp aria-hidden="true" />
       </a>
+      <ToastContainer className="foo" />
     </div>
   );
 };

@@ -8,12 +8,27 @@
     float: left; 
     padding: 0 1rem; 
     box-sizing: border-box; 
+    border-right: 0.1px solid  #dedede59;
+    cursor: pointer;
+    border-radius: 10px;
   }
 
-  .FollowersName {
+  .UserCommunites {
     color: #DEDEDE;
     padding: 1rem;
   }
+
+  .UserCommunityimg {
+    width: 100%;
+    transition: width 0.3s ease-in-out; /* Add transition for smooth animation */
+    border-radius: 33px;
+  }
+  
+  .UserCommunityimg:hover {
+    width: 110%; /* Increase width on hover */
+    border-radius: 33px; /* Add rounded corners */
+  }
+
 
   .Follwers{
     display: flex;
@@ -35,6 +50,7 @@
     background-color: #0c0c3654;
     border-radius: 10px;
     margin-right: 0.4rem;
+    margin-left: 1rem;
   }
   .container.sent {
     background-color: #4e5e7265;
@@ -45,6 +61,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    padding-bottom: 4rem;
   }
   
   .CommunityMessageBox {
@@ -55,6 +72,7 @@
     padding: 1rem 2rem;
     margin-left: 1rem;
     color: #DEDEDE;
+  
   }
   
   .MessageSendButton {

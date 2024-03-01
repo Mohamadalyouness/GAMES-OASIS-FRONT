@@ -3,10 +3,12 @@ import "./GamesinfoPage.css";
 import axios from "axios";
 import img from "../../assets/AboutUs.jpg";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const GamesinfoPage = () => {
   const { id } = useParams();
   const [game, setGame] = useState(null);
+  const [similarGames, setSimilarGames] = useState([]);
 
   useEffect(() => {
     const fetchGameInfo = async () => {
@@ -14,6 +16,12 @@ const GamesinfoPage = () => {
       const url = `https://api.rawg.io/api/games/${id}?key=${apiKey}`;
       try {
         const response = await axios.get(url);
+        if (response.data.genres.length > 0) {
+          const genreId = response.data.genres[0].id;
+          const similarUrl = `https://api.rawg.io/api/games?key=${apiKey}&genres=${genreId}&page_size=3`;
+          const similarResponse = await axios.get(similarUrl);
+          setSimilarGames(similarResponse.data.results);
+        }
         setGame(response.data);
       } catch (error) {
         console.error("Error fetching game info:", error);
@@ -71,10 +79,9 @@ const GamesinfoPage = () => {
         </div>
         <div className="LeftSide">
           <div className="GameImages">
-            {game.short_screenshots &&
-              game.short_screenshots.map((image, index) => (
-                <img key={index} className="Gameimg" src={image.image} alt="" />
-              ))}
+            <img className="Gameimg" src={game.background_image} alt="" />
+            <img className="Gameimg" src={game.background_image_additional} alt="" />
+            <img className="Gameimg" src={game.background_image_additional} alt="" />
           </div>
         </div>
       </div>
@@ -110,24 +117,16 @@ const GamesinfoPage = () => {
       <div className="BottomSide">
         <h1 className="BottomH1">Games like {game.name}</h1>
         <div className="Games">
-          <div className="card">
-            <img src={img} alt="" />
-            <div className="card__content">
-              <p className="card__title">hello</p>
+          {similarGames.map((similarGame) => (
+            <div className="card" key={similarGame.id}>
+              <img src={similarGame.background_image} alt={similarGame.name} />
+              <div className="card__content">
+              <Link className="link" to={`/game/${similarGame.id}`}>
+                  <p className="card__title">{similarGame.name}</p>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="card">
-            <img src={img} alt="" />
-            <div className="card__content">
-              <p className="card__title">hello</p>
-            </div>
-          </div>
-          <div className="card">
-            <img src={img} alt="" />
-            <div className="card__content">
-              <p className="card__title">hello</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

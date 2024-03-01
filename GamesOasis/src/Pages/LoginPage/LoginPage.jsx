@@ -19,6 +19,7 @@ const LoginPage = () => {
 
 
   const handleLogin = async () => {
+    console.log("body ",username, password)
     try {
       const response = await axios.post("http://localhost:4005/api/login", {
         username,
@@ -32,9 +33,10 @@ const LoginPage = () => {
   
       // Refresh the page to trigger re-render of the Navbar component
       window.location.reload();
-  
-      navigate("/");
+
       toast.success("Welcome, " + username + "!");
+
+      navigate("/");
     } catch (error) {
       console.error("Error occurred during login:", error);
       toast.error("UserName or password is incorrect please try again!");

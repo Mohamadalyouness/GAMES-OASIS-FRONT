@@ -14,6 +14,7 @@ import CommunityPage from "./Pages/CommunityPage/CommunityPage.jsx";
 import "./App.css";
 
 const App = () => {
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,16 +28,11 @@ const AppContent = () => {
   // const [isLoading, setIsLoading] = useState(true);
   // const location = useLocation();
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 3000);
-  // }, [location]);
 
   return (
     <div className="Pages">
-      <Navbar />
+      <Navbar/>
+
       {/* {isLoading ? (
         <Loader />
       ) : ( */}
@@ -53,6 +49,7 @@ const AppContent = () => {
           </Routes>
           <Footer />
         </>
+
       {/* )} */}
     </div>
   );

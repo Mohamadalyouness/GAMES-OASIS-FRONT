@@ -12,6 +12,7 @@
   -ms-transition: all 1s ease;
   transition: all 1s ease;
   cursor: pointer;
+  animation: slideIn 1s ease-in-out;
 }
 .footer #button:hover {
   width: 35px;
@@ -37,6 +38,7 @@
   -o-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
+  text-decoration: none;
  
 }
 .footer:hover {
@@ -77,8 +79,41 @@
 .FooterNavgation {
    display: flex;
    gap: 3rem;
-   
+   text-decoration: none;
+}
+.FooterNavgation a {
+  text-decoration: none;
 }
 .Navgation {
   color: #dedede;
+}
+
+@media screen and (max-width: 768px) {
+  .FooterNavgation {
+    margin-left: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2rem;
+    text-decoration: none;
+  
+  }
+ .LogoFooter {
+  display: none;
+ }
+
+ .mediaicons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2rem;
+  font-size: 1rem;
+ }
+
 }
