@@ -18,9 +18,7 @@
 //       if (storedToken) {
 //         try {
 //           const decodedId = jwtDecode(storedToken);
-//           console.log(decodedId);
 //           setId(decodedId.id);
-//           console.log(decodedId.id);
 //           setAuth(true);
 //           setUserLogin(true);
 //           setRole(decodedId.role);

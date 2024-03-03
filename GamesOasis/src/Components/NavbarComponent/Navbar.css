@@ -138,6 +138,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 1rem;
+  gap: 2rem;
 }
 .links a {
   padding: 12px 25px;
@@ -267,12 +269,20 @@
     position: absolute;
     top: 70px;
     left: 0;
-    background-color: #1e1e66f8;
+    z-index: 100;
+    background-color: #1e1e66;
     width: 100%;
+    border-radius: 33px;
     animation: slideIn 1s ease-in-out;
+    flex-direction: column; /* Stack links and login/logout button vertically on smaller screens */
+    padding-bottom: 1rem;
+  }
+  .LoginButton {
+    width: 80%; /* Make button full width */
   }
   .logo img {
-    width: 120px;
+    width: 180px;
+    margin-left: 3.5rem;
   }
 
   .LoginButton {
@@ -334,11 +344,9 @@
     visibility: hidden;
     transition: 0.25s;
   }
-
   .burger-icon {
     display: block; 
-    font-size: 24px;
-    margin-right: 20px; 
+    font-size: 35px;
   }
 
   .open {

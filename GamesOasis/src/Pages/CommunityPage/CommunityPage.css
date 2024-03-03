@@ -203,4 +203,37 @@
     float: left;
     color: #5E5E5E;
   }
+/* Add media queries for responsiveness */
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .CommunityPage {
+    flex-direction: column; /* Stack components vertically on smaller screens */
+  }
+
+  .left-div {
+    width: 100%; /* Occupy full width on smaller screens */
+    border-right: none; /* Remove right border on smaller screens */
+    border-radius: 0; /* Remove border radius */
+    padding: 0;
+  }
+
+  .chat-container {
+    width: 100%; /* Occupy full width on smaller screens */
+    margin: 0; /* Remove margin */
+    border-radius: 0; /* Remove border radius */
+  }
+
+  .Players {
+    display: flex; /* Ensure the community images are displayed side by side */
+    flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
+    justify-content: space-between; /* Ensure equal spacing between images */
+  }
+
+  .UserCommunites {
+    width: 48%; /* Make each community take 48% width to accommodate two images side by side */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    padding: 0.5rem; /* Add padding between community images */
+  }
+}
+
   

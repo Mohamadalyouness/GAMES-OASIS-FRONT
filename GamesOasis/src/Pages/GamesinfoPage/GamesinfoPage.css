@@ -1,143 +1,199 @@
 .SingleGamePage {
-    display: grid;
-    width: 100%;
-    animation: slideIn 1s ease-in-out;
+  display: grid;
+  width: 100%;
+  animation: slideIn 1s ease-in-out;
 }
 .LeftSide {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .About {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .GameH1 {
-    font-size: 5rem;
-    text-transform: uppercase;
-    animation: slideIn 1s ease-in-out;
-    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+  font-size: 5rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 1.5rem;
 }
 .Gameimg {
-    width: 100%;
-    border-radius: 33px;
+  width: 100%;
+  border-radius: 33px;
 }
 
 .GameImages {
-    display: flex;
-    flex-direction: column;
-    width: 90%;;
-    margin-left: 4rem;
-    gap: 1rem;
-    border-radius: 33px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 4rem;
+  gap: 1rem;
+  border-radius: 33px;
 }
 
 .TopSide {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    padding-left: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 2rem;
 }
 
 .RightSide h3 {
-    text-transform: uppercase;
-    animation: slideIn 1s ease-in-out;
-    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-size: 2rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .RightSide span {
-    color: #DEDEDE;
+  color: #dedede;
 }
 
 .RightSideyunder {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .Spans {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .UnderBottomSide {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .RightSide {
-    width: 100%;
-    padding-left: 2rem;
+  width: 100%;
+  padding-left: 2rem;
 }
 
 .MiddleBottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 2rem;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  gap: 1rem;
 }
 
 .MiddleSide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.MiddleH1{
-    font-size: 3rem;
-    text-transform: uppercase;
-    animation: slideIn 1s ease-in-out;
-    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+.MiddleH1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .MiddleBottom h3 {
-   padding-bottom: 1rem;
-   text-transform: uppercase;
-   animation: slideIn 1s ease-in-out;
-   background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-   color: transparent;
-   background-clip: text;
-   -webkit-background-clip: text;
-   font-size: 2rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 2rem;
 }
 
-
 .MiddleBottom span {
-    text-transform: uppercase;
-    animation: slideIn 1s ease-in-out;
-    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
- }
- .BottomSide {
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.BottomSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.BottomH1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  animation: slideIn 1s ease-in-out;
+  background-image: radial-gradient(ellipse, #8070ac, #a3746b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 768px) {
+  .SingleGamePage {
+    grid-template-columns: 1fr; /* Set single column layout on smaller screens */
+  }
+
+  .GameImages {
+    grid-template-columns: 1fr; /* Set single column layout for game images */
+  }
+  .MiddleH1,
+  .BottomH1 {
+    font-size: 1.6rem; /* Reduce font size for headings */
+    padding-left: 1rem;
+  }
+
+  .RightSide {
+    padding: 0;
+  }
+
+  .About {
+    
+    max-width: 100%; /* Limit the maximum width */
+    overflow-wrap: break-word; /* Allow the text to wrap */
+  }
+
+  .Spans h3 {
+    font-size: 1.5rem;
+  }
+
+  .MiddleBottom {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
- }
+    padding: 2rem;
+    gap: 1rem;
+  }
 
- .BottomH1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    animation: slideIn 1s ease-in-out;
-    background-image: radial-gradient(ellipse, #8070ac, #a3746b);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
- } 
- 
+  .RightSideyunder {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .TopSide {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .GameImages {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 0;
+    gap: 1rem;
+    border-radius: 33px;
+  }
+
+
+}

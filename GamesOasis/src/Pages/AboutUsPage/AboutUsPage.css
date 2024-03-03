@@ -82,3 +82,43 @@
   margin-left: 1.5rem;
   animation: slideIn 1s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .whoAreWe {
+    width: 90%; /* Adjust width for smaller screens */
+    display: flex;
+    flex-direction: column;
+    border-radius: 33px;
+  }
+
+  .Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .WhoAreWeImage {
+    width: 100%;
+    border-radius: 33px;
+  }
+
+  .WAWHeading {
+    font-size: 1.5rem; /* Adjust font size */
+    margin-top: 1rem;
+  }
+
+  .WAWContent {
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .AboutUsiconRight,
+  .AboutUsiconLeft {
+    font-size: 2rem; /* Adjust icon size */
+    margin-right: 1rem; /* Adjust margin */
+    margin-left: 1rem; /* Adjust margin */
+  }
+}

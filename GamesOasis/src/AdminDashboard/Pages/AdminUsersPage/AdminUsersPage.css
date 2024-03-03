@@ -1,0 +1,45 @@
+.AdminUsersPage {
+    display: flex;
+  }
+ 
+.Sidebar {
+    width: 20%;
+}
+
+.PageHeading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    color: #DEDEDE;
+}
+
+/* AdminUsersPage.css */
+
+.TableContainer {
+    margin-top: 20px;
+  }
+  
+  .UserTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .UserTable th, .UserTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: #DEDEDE;
+  }  
+  .UserTable tbody tr:hover {
+    background-color: #b039ff;
+  }
+  
+  .UserTable button {
+    background-color: #0c0c36;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }

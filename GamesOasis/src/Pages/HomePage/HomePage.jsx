@@ -14,10 +14,15 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { MdOutlineEmojiPeople } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./HomePage.css";
 import axios from "axios";
 const HomePage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
   const videoRef = useRef(null);
   const [tournaments, setTournaments] = useState([]);
   const [communities, setCommunities] = useState([]);
@@ -95,26 +100,26 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <div className="WelcomeGamers">
-        <h3 className="Headingthree">WELCOME TO GAMERS WORLD</h3>
-        <h3 className="Headingthree">PLAY MORE LIVE MORE</h3>
-        <h3 className="HeadingOne">
+      <div className="WelcomeGamers" >
+        <h3 data-aos="fade-up" className="Headingthree">WELCOME TO GAMERS WORLD</h3>
+        <h3 data-aos="fade-up" className="Headingthree">PLAY MORE LIVE MORE</h3>
+        <h3 data-aos="fade-up" className="HeadingOne">
           join our communities to find your dream team
         </h3>
-        <Link>
-          <button className="HomeButtonCommunity">Join Communities</button>
+        <Link className="CommunityLink" to="">
+          <button data-aos="fade-up" className="HomeButtonCommunity">Join Communities</button>
         </Link>
-        <div className="Banners">
-          <img className="Herobannerbg" src={Herobannerbg} alt="" />
+        <div className="Banners" >
+          <img  className="Herobannerbg" src={Herobannerbg} alt="" />
           <img className="Herobanner" src={Herbanner} alt="" />
         </div>
       </div>
-      <div className="VideoHeading">
+      <div className="VideoHeading" data-aos="fade-up">
         <MdOutlineGames className="GamesIcon1" />
         <h1 className="HeadingOne"> it's just a game! </h1>
         <MdOutlineGames className="GamesIcon" />
       </div>
-      <div className="videoContainer">
+      <div className="videoContainer" data-aos="fade-up">
         <video
           ref={videoRef}
           src={HomeVideo}
@@ -125,7 +130,7 @@ const HomePage = () => {
           controls
         ></video>
       </div>
-      <div className="News">
+      <div className="News" data-aos="fade-up">
         <div className="Newsheader">
           <GiEgyptianWalk className="NewsIcon" />
           <h1 className="TournmentsheaderText">News Feed</h1>
@@ -133,7 +138,7 @@ const HomePage = () => {
         </div>
         <NewsSlider />
       </div>
-      <div className="Tournament">
+      <div className="Tournament" data-aos="fade-up">
         <div className="Tournmentheader">
           <AiTwotoneTrophy className="NewsIcon" />
           <h1 className="TournmentsheaderText">Tournaments</h1>
@@ -202,7 +207,7 @@ const HomePage = () => {
           })}
         </div>
       </div>
-      <div className="Community">
+      <div className="Community" data-aos="fade-up">
       <div className="Newsheader">
         <MdOutlineEmojiPeople className="NewsIcon" />
         <h1 className="CommunityHeading">Join Community Now</h1>
@@ -226,7 +231,7 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-      <div className="PopularGames">
+      <div className="PopularGames" data-aos="fade-in">
         <div className="PopularGamesheader">
           <BsFire className="PopularIcons" />
           <h1 className="PopularGamesheaderText">popular Games</h1>

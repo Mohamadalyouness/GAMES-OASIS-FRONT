@@ -264,3 +264,16 @@ color: #fff;
 --s: #0005;
 transition: none;
 }
+
+/* Default styles */
+
+/* Add this media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 20px; /* Adjust container padding for smaller screens */
+  }
+
+  .card-3d-wrap {
+    width: 100%; /* Make the login form full width on smaller screens */
+  }
+}

@@ -1,7 +1,10 @@
 .ContactUs {
-    margin-top: 8rem;
-    margin-left: 30rem;
-    animation: slideIn 1s ease-in-out;
+  margin-top: 8rem;
+  margin-left: 30rem; /* Increase left margin */
+  margin-right: auto;
+  max-width: calc(100% - 6rem);
+  padding: 0 1rem; /* Add padding */
+  animation: slideIn 1s ease-in-out;
 }
 .contactUsh1 {
     font-size: 2rem;
@@ -249,6 +252,20 @@
     90% {transform: translateY(-8.5rem) scale(0.3, 0.5);}
     100% {transform: translateY(-8rem) scale(0.3, 0.5);}
   }
- 
+  @media (max-width: 768px) {
+    .ContactUs {
+      margin-left: -4rem; /* Adjust left margin for smaller screens */
+      margin-right: 1rem;
+      max-width: calc(100% - 2rem); /* Adjust max-width for smaller screens */
+    }
+    
+    .InputContactUs {
+      width: calc(100% - 2rem); /* Adjust width */
+    }
+
+    .ContactUsbutton {
+      margin-right: 3.5rem;
+    }
+  }
   
   

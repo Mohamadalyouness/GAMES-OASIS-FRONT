@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 768px) {
   .FooterNavgation {
-    margin-left: 5rem;
+    margin-left: 8rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -99,21 +99,20 @@
     gap: 10px;
     margin-top: 2rem;
     text-decoration: none;
-  
   }
- .LogoFooter {
-  display: none;
- }
 
- .mediaicons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 2rem;
-  font-size: 1rem;
- }
+  .LogoFooter {
+    display: none; /* Hide logo on smaller screens */
+  }
 
+  .mediaicons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
 }

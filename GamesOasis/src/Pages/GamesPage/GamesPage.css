@@ -1,21 +1,20 @@
 .GamesPage {
   display: flex;
   flex-direction: column;
-  color: #DEDEDE;
+  color: #dedede;
   margin-top: 2rem;
-  
 }
 
 .sidebar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    border-bottom: 1px solid #DEDEDE;
-    border-top: 1px solid #DEDEDE;
-    animation: slideIn 1s ease-in-out;
-  }
-  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+  animation: slideIn 1s ease-in-out;
+}
+
 .GamesPage-container {
   position: relative;
   border-radius: 33px;
@@ -25,141 +24,172 @@
   margin-top: 0.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
-
 }
 
 .dropbutton {
-    font-size: 1.5rem;
-    border: none;
-    cursor: pointer;
-    color: #DEDEDE;
-    margin-top: 1.5rem;
-    animation: slideIn 1s ease-in-out;
-  }
-  .dropdown {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    padding-bottom: 1rem;
-  }
-  /* Dropdown Content */
-  .dropdown-content {
-    position: absolute;
-    display: none;
-    z-index: 1;
-    background-color: #0c0c36;
-    min-width: 160px;
-    top: calc(100% + 5px);
-    left: 0; 
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  /* Show the dropdown content when the .open class is present */
-  .dropdown-content.open {
-    display: block;
-  }
-  
-  .arrow {
-    font-size: 1.2rem;
-  }
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  color: #dedede;
+  margin-top: 1.5rem;
+  animation: slideIn 1s ease-in-out;
+}
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+/* Dropdown Content */
+.dropdown-content {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  background-color: #0c0c36;
+  min-width: 160px;
+  top: calc(100% + 5px);
+  left: 0;
+  animation: slideIn 1s ease-in-out;
+}
 
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: #DEDEDE;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #0c0c36;
-  }
-  .Games {
-    width: 100%;
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4rem;
-    align-items: flex-start; 
-    justify-content: center;
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  .card {
-    position: relative;
-    width: 25%; 
-    height: 200px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: 0 0 0 5px #ffffff80;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-  }
-  
-  .card__content {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card:hover .card__content {
-    transform: rotateX(0deg);
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  .card__title {
-    font-size: 1rem;
-    color: #DEDEDE;
-    background-color: #0c0c36b2;
-    padding: 0.4rem;
-    border-radius: 10px;
-    font-weight: 700;
-    margin-right: 6rem;
-  }
+/* Show the dropdown content when the .open class is present */
+.dropdown-content.open {
+  display: block;
+}
 
-  .GamesHeader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3rem;
-    font-size: 1.8rem;
-    animation: slideIn 1s ease-in-out;
-  }
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #dedede;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #0c0c36;
+}
+.Games {
+  width: 100%;
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: center;
+  animation: slideIn 1s ease-in-out;
+}
+
+.card {
+  position: relative;
+  width: 25%;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideIn 1s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideIn 1s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+  animation: slideIn 1s ease-in-out;
+}
+
+.card__title {
+  font-size: 1rem;
+  color: #dedede;
+  background-color: #0c0c36b2;
+  padding: 0.4rem;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-right: 6rem;
+}
+
+.GamesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 1.8rem;
+  animation: slideIn 1s ease-in-out;
+}
 .HeadingGamesPageiconLeft {
-      font-size: 2.5rem;
-      margin-right: 1rem ;
-      animation: slideIn 1s ease-in-out;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  animation: slideIn 1s ease-in-out;
 }
 
 .HeadingGamesPageiconRight {
-    font-size: 2.5rem;
-    margin-left: 1rem;
-    animation: slideIn 1s ease-in-out;
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Adjust font sizes and padding for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust dropdown styling */
+  .dropdown-content {
+    width: 100%;
+    background-color: #0c0c36;
+    left: 0;
+  }
+
+  /* Ensure dropdown button takes full width */
+  .dropdown {
+    width: 100%;
+  }
+  .dropbutton {
+    /* Override font size and margin */
+    font-size: 1rem; /* Use !important to override existing styles */
+    margin-top: 1rem ;
+    margin-left: 0.8rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+  /* Adjust card styling */
+  .card {
+    width: 90%; /* Make cards full width */
+  }
+
+  /* Adjust margin between cards */
+ 
 }

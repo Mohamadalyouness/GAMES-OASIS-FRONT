@@ -1,4 +1,4 @@
-import React, { useState , useContext } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,6 @@ import { FaUnlockKeyhole } from "react-icons/fa6";
 import { CiUser } from "react-icons/ci";
 import { MdOutlineGames } from "react-icons/md";
 const LoginPage = () => {
- 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,32 +16,34 @@ const LoginPage = () => {
   const [username, setusername] = useState("");
   const [isLogin, setIsLogin] = useState(true);
 
-
   const handleLogin = async () => {
-    console.log("body ",username, password)
     try {
       const response = await axios.post("http://localhost:4005/api/login", {
         username,
         password,
       });
       console.log("Login successful!", response.data);
-      
+
       // Save user data and token to local storage
       localStorage.setItem("userData", JSON.stringify(response.data.user));
       localStorage.setItem("token", response.data.token);
-  
+      // Check if the user is an admin
+      if (response.data.user.role === "admin") {
+        // If the user is an admin, navigate to the admin dashboard
+        navigate("/AdminUsersPage");
+      } else {
+        // If the user is not an admin, navigate to the user dashboard
+        navigate("/");
+      }
       // Refresh the page to trigger re-render of the Navbar component
       window.location.reload();
 
       toast.success("Welcome, " + username + "!");
-
-      navigate("/");
     } catch (error) {
       console.error("Error occurred during login:", error);
       toast.error("UserName or password is incorrect please try again!");
     }
   };
-  
 
   const handleRegister = async () => {
     try {
@@ -200,7 +201,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      <ToastContainer className="foo"/>
+      <ToastContainer className="foo" />
     </div>
   );
 };

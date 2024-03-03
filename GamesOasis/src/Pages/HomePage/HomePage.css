@@ -223,10 +223,9 @@
 }
 .Herobanner {
   position: absolute;
-  width: 60%;
-  height: 70%;
+  width: 50%;
   z-index: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   animation: slideIn 1s ease-in-out;
 }
 .videoContainer {
@@ -585,21 +584,65 @@
       font-size: 1rem;
       margin-left:1.1rem;
       padding-left: 2rem;
+    
+  }
+
+  .HeadingOne {
+    font-size: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .Banners {
+    display: none;
   }
   
-  .HeadingOne {
-    font-size: 1rem;
-    padding-left: 2rem;
-   
+  .CommunityLink  {
+    padding-bottom: 1rem;
   }
-  .Herobannerbg {
-     display: none;
+  .Tournamentbody {
+    display: flex;
+    flex-direction: column;
   }
-  .Herobanner {
-    width: 40%;
-    height: 40%;
+
+  .TournmentsheaderText {
+    font-size: 1.7rem;
+  }
+
+  .CommunityHeading {
+    font-size: 1.5rem;
+  }
+
+  .NewsIcon {
+      font-size: 2rem;
+      margin-right: 1rem;
+  }
+
+  .NewsIcon1 {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+
+  .Tournmentheadertwo h3 {
+    display: none;
+  }
+
+  .PopularGamesheader {
+    margin-left: 2rem;
+  }
+
+  .PopularGamesheaderText {
+    font-size: 1.7rem;
+  }
+
+  .PopularIcons {
+    font-size: 2rem;
+  }
+  .PopularIconsOne {
+    font-size: 2rem;
+  }
  
-  }
 
  }
 
