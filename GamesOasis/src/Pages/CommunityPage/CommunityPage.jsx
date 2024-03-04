@@ -48,14 +48,14 @@ export default function CommunityPage() {
         };
 
         const response = await axios.get(
-          `https://games-oasis-back-1.onrender.com/api/getUser/${userId}`,
+          `http://localhost:4005/api/getUser/${userId}`,
           { headers }
         );
         setUserCommunities(response.data.Communities);
 
         if (com) {
           const chatResponse = await axios.get(
-            `https://games-oasis-back-1.onrender.com/api/chatmessage/${com}`
+            `http://localhost:4005/api/chatmessage/${com}`
           );
           setChatMessages(chatResponse.data);
         }
@@ -72,7 +72,7 @@ export default function CommunityPage() {
 
     try {
       const response = await axios.get(
-        `https://games-oasis-back-1.onrender.com/api/chatmessage/${communityId}`
+        `http://localhost:4005/api/chatmessage/${communityId}`
       );
       setChatMessages(response.data);
 
@@ -112,7 +112,7 @@ export default function CommunityPage() {
       };
 
       var response = await axios.post(
-        `https://games-oasis-back-1.onrender.com/api/chatmessage/${com}/`,
+        `http://localhost:4005/api/chatmessage/${com}/`,
         {
           message: newMessage.text,
           senderId: userId,
@@ -140,14 +140,10 @@ export default function CommunityPage() {
         <h1 className="Follwers">Communities</h1>
         <div className="Players">
           {userCommunities.map((each) => (
-            <div
-              className="UserCommunites"
-              key={each._id}
-              onClick={() => handleCommunityClick(each._id)}
-            >
-              <img
+            <div className="UserCommunites" key={each._id} onClick={() => handleCommunityClick(each._id)}>
+                 <img
                 className="UserCommunityimg"
-                src={`https://games-oasis-back-1.onrender.com/assets/${each.images}`}
+                src={`http://localhost:4005/${each.images}`}  
               />
             </div>
           ))}
