@@ -140,10 +140,14 @@ export default function CommunityPage() {
         <h1 className="Follwers">Communities</h1>
         <div className="Players">
           {userCommunities.map((each) => (
-            <div className="UserCommunites" key={each._id} onClick={() => handleCommunityClick(each._id)}>
-                 <img
+            <div
+              className="UserCommunites"
+              key={each._id}
+              onClick={() => handleCommunityClick(each._id)}
+            >
+              <img
                 className="UserCommunityimg"
-                src={`https://games-oasis-back-1.onrender.com/${each.images}`}  
+                src={`https://games-oasis-back-1.onrender.com/assets/${each.images}`}
               />
             </div>
           ))}
