@@ -34,3 +34,10 @@
    letter-spacing: 3px;
    margin-right: 1rem;
 }
+
+@media (max-width: 1080px) {
+    .FullNewsPage {
+        display: flex;
+        flex-direction: column;
+    }
+}

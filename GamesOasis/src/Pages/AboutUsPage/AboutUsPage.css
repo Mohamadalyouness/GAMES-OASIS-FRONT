@@ -83,7 +83,7 @@
   animation: slideIn 1s ease-in-out;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .whoAreWe {
     width: 90%; /* Adjust width for smaller screens */
     display: flex;

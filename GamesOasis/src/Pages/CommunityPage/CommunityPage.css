@@ -205,7 +205,7 @@
   }
 /* Add media queries for responsiveness */
 /* Add media queries for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .CommunityPage {
     flex-direction: column; /* Stack components vertically on smaller screens */
   }
@@ -233,6 +233,11 @@
     width: 48%; /* Make each community take 48% width to accommodate two images side by side */
     box-sizing: border-box; /* Include padding and border in the width calculation */
     padding: 0.5rem; /* Add padding between community images */
+  }
+
+  .MessageSendButton {
+    padding: 1rem;
+    font-size: 1.4rem;
   }
 }
 
