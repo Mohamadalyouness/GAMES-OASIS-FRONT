@@ -30,7 +30,7 @@ const AdminCommunityPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4005/api/community");
+        const response = await axios.get("https://games-oasis-back-1.onrender.com/api/community");
         setCommunities(response.data);
 
         // Fetch messages for each community
@@ -56,7 +56,7 @@ const AdminCommunityPage = () => {
 
   const handleDelete = async (communityId, messageId) => {
     try {
-      await axios.delete(`http://localhost:4005/api/chatmessage/${messageId}`);
+      await axios.delete(`https://games-oasis-back-1.onrender.com/api/chatmessage/${messageId}`);
       // Remove the deleted message from the state
       const updatedMessages = messages.map((msgData) => {
         if (msgData.communityId === communityId) {
@@ -141,7 +141,7 @@ const AdminCommunityPage = () => {
                   <TableCell className="Logotable">
                     <img
                       className="cardimg"
-                      src={`http://localhost:4005/${community.images}`}
+                      src={`https://games-oasis-back-1.onrender.com/${community.images}`}
                     />
                   </TableCell>
                   <TableCell>
@@ -192,7 +192,7 @@ const AdminCommunityPage = () => {
                   <TableCell className="Logotable">
                     <img
                       className="cardimg"
-                      src={`http://localhost:4005/${community.images}`}
+                      src={`https://games-oasis-back-1.onrender.com/${community.images}`}
                     />
                   </TableCell>
                   <TableCell>{community.name}</TableCell>

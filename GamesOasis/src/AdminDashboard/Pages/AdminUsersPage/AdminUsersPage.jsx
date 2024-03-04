@@ -38,7 +38,7 @@
           };
     
           // Make API request with the token and role included in headers
-          const response = await axios.get("http://localhost:4005/api/getUser", {
+          const response = await axios.get("https://games-oasis-back-1.onrender.com/api/getUser", {
             headers: headers,
           });
     
@@ -78,7 +78,7 @@
         };
     
         // Make API call to delete user by ID with token and role in headers
-        await axios.delete(`http://localhost:4005/api/deleteUser/${id}`, {
+        await axios.delete(`https://games-oasis-back-1.onrender.com/api/deleteUser/${id}`, {
           headers: headers,
         });
         

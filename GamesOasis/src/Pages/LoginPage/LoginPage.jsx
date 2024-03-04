@@ -18,7 +18,7 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:4005/api/login", {
+      const response = await axios.post("https://games-oasis-back-1.onrender.com/api/login", {
         username,
         password,
       });
@@ -47,7 +47,7 @@ const LoginPage = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post("http://localhost:4005/api/register", {
+      const response = await axios.post("https://games-oasis-back-1.onrender.com/api/register", {
         username,
         gamingName,
         email,

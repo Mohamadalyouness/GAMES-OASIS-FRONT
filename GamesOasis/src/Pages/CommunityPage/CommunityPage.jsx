@@ -48,14 +48,14 @@ export default function CommunityPage() {
         };
 
         const response = await axios.get(
-          `http://localhost:4005/api/getUser/${userId}`,
+          `https://games-oasis-back-1.onrender.com/api/getUser/${userId}`,
           { headers }
         );
         setUserCommunities(response.data.Communities);
 
         if (com) {
           const chatResponse = await axios.get(
-            `http://localhost:4005/api/chatmessage/${com}`
+            `https://games-oasis-back-1.onrender.com/api/chatmessage/${com}`
           );
           setChatMessages(chatResponse.data);
         }
@@ -72,7 +72,7 @@ export default function CommunityPage() {
 
     try {
       const response = await axios.get(
-        `http://localhost:4005/api/chatmessage/${communityId}`
+        `https://games-oasis-back-1.onrender.com/api/chatmessage/${communityId}`
       );
       setChatMessages(response.data);
 
@@ -112,7 +112,7 @@ export default function CommunityPage() {
       };
 
       var response = await axios.post(
-        `http://localhost:4005/api/chatmessage/${com}/`,
+        `https://games-oasis-back-1.onrender.com/api/chatmessage/${com}/`,
         {
           message: newMessage.text,
           senderId: userId,
@@ -143,7 +143,7 @@ export default function CommunityPage() {
             <div className="UserCommunites" key={each._id} onClick={() => handleCommunityClick(each._id)}>
                  <img
                 className="UserCommunityimg"
-                src={`http://localhost:4005/${each.images}`}  
+                src={`https://games-oasis-back-1.onrender.com/${each.images}`}  
               />
             </div>
           ))}

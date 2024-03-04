@@ -29,12 +29,13 @@ const AdminTournamentsPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4005/api/tournament"
+          "https://games-oasis-back-1.onrender.com/api/tournament"
         );
         setTournaments(response.data);
       } catch (error) {
         console.error("Error fetching tournaments:", error);
       }
+
     };
 
     fetchData();
@@ -50,7 +51,7 @@ const AdminTournamentsPage = () => {
 
       // Delete tournament by ID
       await axios.delete(
-        `http://localhost:4005/api/tournament/${deleteTournamentId}`,
+        `https://games-oasis-back-1.onrender.com/api/tournament/${deleteTournamentId}`,
         { headers }
       );
 
@@ -94,7 +95,7 @@ const AdminTournamentsPage = () => {
       formData.append("teamTwoLogo", teamTwoLogo);
 
       const response = await axios.post(
-        "http://localhost:4005/api/tournament",
+        "https://games-oasis-back-1.onrender.com/api/tournament",
         formData,
         { headers }
       );
@@ -141,7 +142,7 @@ const AdminTournamentsPage = () => {
                 <tr key={index}>
                   <td>
                     <img
-                      src={`http://localhost:4005/assets/${tournament.teamLogos[0]}`}
+                      src={`https://games-oasis-back-1.onrender.com/assets/${tournament.teamLogos[0]}`}
                       alt={`${tournament.teamNames[0]} Logo`}
                       className="team-logo"
                     />
@@ -149,7 +150,7 @@ const AdminTournamentsPage = () => {
                   </td>
                   <td>
                     <img
-                      src={`http://localhost:4005/assets/${tournament.teamLogos[1]}`}
+                      src={`https://games-oasis-back-1.onrender.com/assets/${tournament.teamLogos[1]}`}
                       alt={`${tournament.teamNames[1]} Logo`}
                       className="team-logo"
                     />

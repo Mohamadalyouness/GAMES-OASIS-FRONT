@@ -9,7 +9,7 @@ const NewsSliderF = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get("http://localhost:4005/api/News/");
+        const response = await axios.get("https://games-oasis-back-1.onrender.com/api/News/");
         setNews(response.data);
       } catch (error) {
         console.error("Error fetching news:", error);
@@ -24,7 +24,7 @@ const NewsSliderF = () => {
       {news.map((item) => (
         <div key={item._id} className="NewsCard">
           <div className="imgHead">
-            <img className="NewsImg" src={`http://localhost:4005/${item.images}`} alt="" />
+            <img className="NewsImg" src={`https://games-oasis-back-1.onrender.com/${item.images}`} alt="" />
           </div>
           <h1 className="title">{item.gameName}</h1>
           <p className="description">

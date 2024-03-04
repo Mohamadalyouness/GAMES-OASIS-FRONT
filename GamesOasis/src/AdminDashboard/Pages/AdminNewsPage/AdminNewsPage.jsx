@@ -16,7 +16,7 @@ const AdminNewsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4005/api/news');
+        const response = await axios.get('https://games-oasis-back-1.onrender.com/api/news');
         setNewsItems(response.data);
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -37,7 +37,7 @@ const AdminNewsPage = () => {
       };
   
       // Delete news item by ID
-      await axios.delete(`http://localhost:4005/api/news/${deleteItemId}`, { headers });
+      await axios.delete(`https://games-oasis-back-1.onrender.com/api/news/${deleteItemId}`, { headers });
   
       // Update news items state by removing the deleted item
       setNewsItems(newsItems.filter(item => item._id !== deleteItemId));
@@ -70,7 +70,7 @@ const AdminNewsPage = () => {
       formData.append('file', image);
 
 
-      const response = await axios.post('http://localhost:4005/api/news', formData, { headers });
+      const response = await axios.post('https://games-oasis-back-1.onrender.com/api/news', formData, { headers });
       
       setNewsItems([...newsItems, response.data]);
       setOpenAddDialog(false);

@@ -31,7 +31,7 @@ const HomePage = () => {
     const fetchCommunities = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4005/api/community/"
+          "https://games-oasis-back-1.onrender.com/api/community/"
         );
         setCommunities(response.data);
       } catch (error) {
@@ -63,7 +63,7 @@ const HomePage = () => {
 
       // Make a request to join the community
       const response = await axios.post(
-        `http://localhost:4005/api/community/${communityId}/join`,
+        `https://games-oasis-back-1.onrender.com/api/community/${communityId}/join`,
         data
       );
 
@@ -80,7 +80,7 @@ const HomePage = () => {
     const fetchTournaments = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4005/api/tournament/"
+          "https://games-oasis-back-1.onrender.com/api/tournament/"
         );
         setTournaments(response.data);
       } catch (error) {
@@ -152,8 +152,8 @@ const HomePage = () => {
         </div>
         <div className="Tournamentbody">
           {tournaments.map((tournament) => {
-            const teamOneLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[0]}`;
-            const teamTwoLogoUrl = `http://localhost:4005/assets/${tournament.teamLogos[1]}`;
+            const teamOneLogoUrl = `https://games-oasis-back-1.onrender.com/assets/${tournament.teamLogos[0]}`;
+            const teamTwoLogoUrl = `https://games-oasis-back-1.onrender.com/assets/${tournament.teamLogos[1]}`;
 
             return (
               <div key={tournament._id} className="TournamentDetails">
@@ -218,7 +218,7 @@ const HomePage = () => {
             <div key={community._id} className="cardHome">
               <img
                 className="cardimg"
-                src={`http://localhost:4005/${community.images}`}
+                src={`https://games-oasis-back-1.onrender.com/${community.images}`}
               />
               <div className="overlay"></div>
               <button
