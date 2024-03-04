@@ -9,7 +9,7 @@ const NewsSliderF = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get("http://localhost:4005/api/News/");
+        const response = await axios.get("https://games-oasis-back-1.onrender.com/api/News/");
         setNews(response.data);
       } catch (error) {
         console.error("Error fetching news:", error);
