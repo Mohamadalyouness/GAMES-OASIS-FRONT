@@ -11,7 +11,7 @@ const FullNewsPage = () => {
     const fetchNewsItem = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4005/api/News/${id}`
+          `https://games-oasis-back-1.onrender.com/api/News/${id}`
         );
         setNewsItem(response.data);
       } catch (error) {
@@ -31,7 +31,7 @@ const FullNewsPage = () => {
             <div className="Middle">
             <img
               className="imgNewsGame"
-              src={`http://localhost:4005/${newsItem.images}`}
+              src={`https://games-oasis-back-1.onrender.com/${newsItem.images}`}
               alt=""
             />
             <div className="FullContent">{newsItem.content}</div>
