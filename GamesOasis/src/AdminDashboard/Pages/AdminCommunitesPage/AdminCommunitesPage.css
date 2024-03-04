@@ -1,0 +1,39 @@
+.AdminCommunityPage {
+  display: flex;
+}
+
+.Sidebar {
+  width: 20%;
+}
+
+.TableContainer {
+  margin-top: 20px;
+}
+
+.Logotable {
+  width: 20%;
+}
+
+.CommunityTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.CommunityTable th,
+.CommunityTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: #dedede;
+}
+.CommunityTable tbody tr:hover {
+  background-color: #b039ff;
+}
+
+.CommunityTable button {
+  background-color: #0c0c36;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}

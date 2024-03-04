@@ -11,6 +11,7 @@ const AdminNewsPage = () => {
   const [openAddDialog, setOpenAddDialog] = useState(false);
   const [gameName, setGameName] = useState('');
   const [content, setContent] = useState('');
+  const [image, setImage] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,24 +29,26 @@ const AdminNewsPage = () => {
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem("token");
-      
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      const userRole = userData?.userRole; // Accessing userRole from userData
       const headers = {
         Authorization: `Bearer ${token}`,
+        Role: userRole,
       };
-
+  
       // Delete news item by ID
       await axios.delete(`http://localhost:4005/api/news/${deleteItemId}`, { headers });
-
+  
       // Update news items state by removing the deleted item
       setNewsItems(newsItems.filter(item => item._id !== deleteItemId));
-
+  
       // Close the delete confirmation dialog
       setOpenDeleteDialog(false);
     } catch (error) {
       console.error('Error deleting news item:', error);
     }
   };
-
+  
   const handleDeleteConfirmation = (id) => {
     setOpenDeleteDialog(true);
     setDeleteItemId(id);
@@ -64,6 +67,8 @@ const AdminNewsPage = () => {
       const formData = new FormData();
       formData.append('gameName', gameName);
       formData.append('content', content);
+      formData.append('file', image);
+
 
       const response = await axios.post('http://localhost:4005/api/news', formData, { headers });
       
@@ -72,6 +77,10 @@ const AdminNewsPage = () => {
     } catch (error) {
       console.error('Error adding news item:', error);
     }
+  };
+
+  const handleImageChange = (event) => {
+    setImage(event.target.files[0]);
   };
 
   return (
@@ -134,6 +143,11 @@ const AdminNewsPage = () => {
             fullWidth
             multiline
             rows={4}
+          />
+          <input
+            type="file"
+            accept="images/*"
+            onChange={handleImageChange}
           />
         </DialogContent>
         <DialogActions>

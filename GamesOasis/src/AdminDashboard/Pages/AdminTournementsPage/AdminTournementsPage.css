@@ -1,0 +1,41 @@
+.AdminTournamentsPage {
+    display: flex;
+  }
+
+  .Sidebar {
+    width: 20%;
+}
+.team-logo {
+    width: 50px; /* Adjust the width as per your requirement */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some margin between the image and team name */
+  }
+
+.TableContainer {
+    margin-top: 20px;
+  }
+  
+  .TournamentsTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .TournamentsTable th, .TournamentsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: #DEDEDE;
+  }  
+  .TournamentsTable tbody tr:hover {
+    background-color: #b039ff;
+  }
+  
+  .TournamentsTable button {
+    background-color: #0c0c36;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+ 
