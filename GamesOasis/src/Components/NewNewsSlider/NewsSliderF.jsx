@@ -24,7 +24,7 @@ const NewsSliderF = () => {
       {news.map((item) => (
         <div key={item._id} className="NewsCard">
           <div className="imgHead">
-            <img className="NewsImg" src={`http://localhost:4005/${item.images}`} alt="" />
+            <img className="NewsImg" src={`https://games-oasis-back-1.onrender.com/${item.images}`} alt="" />
           </div>
           <h1 className="title">{item.gameName}</h1>
           <p className="description">
