@@ -41,6 +41,8 @@
   }
 }
 
+
+
 .WelcomeGamers {
   display: flex;
   flex-direction: column;
@@ -578,6 +580,8 @@
   border-top: 1px solid #dedede;
 }
 
+    
+
 
 @media screen and (max-width: 768px) {
   .Headingthree {
@@ -588,11 +592,12 @@
   }
 
   .HeadingOne {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     align-items: center;
     justify-content: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem;
+    margin-left: 1rem;
+   
   }
   .Banners {
     display: none;
@@ -645,5 +650,6 @@
  
 
  }
+
 
 

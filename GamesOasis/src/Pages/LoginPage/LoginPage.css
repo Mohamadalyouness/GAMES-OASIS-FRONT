@@ -277,3 +277,19 @@ transition: none;
     width: 100%; /* Make the login form full width on smaller screens */
   }
 }
+
+
+
+@media screen and (max-width: 1920px) {
+  .card-3d-wrapper {
+    margin-left: 0;
+  }
+
+  .btn {
+   margin-left: 8rem;
+  }
+
+  .link {
+    margin-left: 5rem;
+  }
+}

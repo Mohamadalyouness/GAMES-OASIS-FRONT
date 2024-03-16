@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import HomeVideo from "../../assets/HomeVideo.mp4";
 import Herobannerbg from "../../assets/hero-banner-bg.png";
-import Herbanner from "../../assets/hero-banner1.png";
+import Herbanner from "../../assets/hero-banner.png";
 import NewsSlider from "../../Components/NewNewsSlider/NewsSliderF.jsx";
 import PouplerGamesSlider1 from "../../Components/PouplerGamesSlider2/PouplerGames1.jsx";
 import { MdOutlineGames } from "react-icons/md";

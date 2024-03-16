@@ -181,6 +181,17 @@
     margin-top: 1rem ;
     margin-left: 0.8rem;
   }
+  .NameOftheFilter{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  .HeadingGamesPageiconLeft {
+    font-size: 2rem;
+  }
+
+  .HeadingGamesPageiconRight {
+    font-size: 2rem;
+  }
 
   .arrow {
     display: none;

@@ -254,8 +254,7 @@
   }
   @media (max-width: 768px) {
     .ContactUs {
-      margin-left: -4rem; /* Adjust left margin for smaller screens */
-      margin-right: 1rem;
+      margin-left: -6rem; /* Adjust left margin for smaller screens */
       max-width: calc(100% - 2rem); /* Adjust max-width for smaller screens */
     }
     
@@ -263,9 +262,20 @@
       width: calc(100% - 2rem); /* Adjust width */
     }
 
+    .TextContactUs {
+      padding-left: 2rem;
+    }
+
     .ContactUsbutton {
       margin-right: 3.5rem;
     }
   }
+
+  @media screen and (max-width: 1920px) {
+    .ContactUs {
+      margin-right: 40rem;
+    }
+  }
+  
   
   

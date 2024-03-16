@@ -210,6 +210,10 @@
     flex-direction: column; /* Stack components vertically on smaller screens */
   }
 
+  .CommunityName {
+    padding: 1rem;
+  }
+
   .left-div {
     width: 100%; /* Occupy full width on smaller screens */
     border-right: none; /* Remove right border on smaller screens */

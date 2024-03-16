@@ -92,6 +92,7 @@
   .FooterNavgation {
     margin-left: 8rem;
     display: grid;
+    padding-left: 2rem;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
@@ -101,10 +102,22 @@
     text-decoration: none;
   }
 
+  .FooterNavgation a:hover {
+    color: #b039ff; /* Color change on hover */
+  }
+
+  .mediaicons a:hover {
+    color: #b039ff; /* Color change on hover */
+  }
+
+
+  .footer_center {
+    gap: 5rem;
+  }
+
   .LogoFooter {
     display: none; /* Hide logo on smaller screens */
   }
-
   .mediaicons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -113,6 +126,7 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 2rem;
+    padding-right: 2rem;
     font-size: 1rem;
   }
 }

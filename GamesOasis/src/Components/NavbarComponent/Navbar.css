@@ -141,6 +141,12 @@
   margin-right: 1rem;
   gap: 2rem;
 }
+
+@media screen and (max-width: 1920px) {
+  .navbar .links {
+    gap: 5rem !important;
+  }
+}
 .links a {
   padding: 12px 25px;
   text-transform: uppercase;
@@ -264,8 +270,8 @@
     display: flex;
   }
   .links {
-    display: none; /* Hide links by default on smaller screens */
-    flex-direction: column; /* Stack links vertically on smaller screens */
+    display: none; 
+    flex-direction: column; 
     position: absolute;
     top: 70px;
     left: 0;
@@ -274,7 +280,7 @@
     width: 100%;
     border-radius: 33px;
     animation: slideIn 1s ease-in-out;
-    flex-direction: column; /* Stack links and login/logout button vertically on smaller screens */
+    flex-direction: column;
     padding-bottom: 1rem;
   }
   .LoginButton {
@@ -290,8 +296,8 @@
     --slant: 0.7em; /* control the slanted corners */
     --color: #b039ff; /* the color */
   
-    font-size: 15px;
-    padding: 0.4em 1.2em;
+    font-size: 20px;
+    padding: 0.3em 2em;
     border: none;
     cursor: pointer;
     font-weight: bold;

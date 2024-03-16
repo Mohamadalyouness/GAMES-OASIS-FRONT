@@ -13,7 +13,7 @@
     
 }
 .imgNewsGame {
-    width: 50%; 
+    width: 100%; 
     border-bottom-left-radius: 33px;
     border-top-left-radius: 33px;
 }
@@ -33,4 +33,28 @@
    padding: 1rem;
    letter-spacing: 3px;
    margin-right: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .Middle {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.5rem;
+    }
+
+    .imgNewsGame {
+        width: 100%; 
+        border-top-right-radius: 33px;
+        border-top-left-radius: 33px;
+       
+    }
+    .NewsName {
+        margin-left: 2rem; 
+    }
+
+    .FullContent {
+        letter-spacing: 1px;
+        margin-right: 0;
+    }
 }
