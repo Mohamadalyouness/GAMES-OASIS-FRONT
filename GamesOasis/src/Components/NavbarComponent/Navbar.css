@@ -296,8 +296,8 @@
     --slant: 0.7em; /* control the slanted corners */
     --color: #b039ff; /* the color */
   
-    font-size: 20px;
-    padding: 0.3em 2em;
+    font-size: 25px;
+    padding: 0.4em 3em;
     border: none;
     cursor: pointer;
     font-weight: bold;
